@@ -1,0 +1,89 @@
+.direction-page {
+  background-color: #F6F6F6;
+  padding: 20px 0 30px;
+}
+
+.direction-lead {
+  padding: 0 15px 30px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.direction-lead__title {
+  margin: 0 0 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 23px;
+  color: #A48764;
+}
+
+.direction-lead__img {
+  max-width: 100%;
+  height: 350px;
+  background-color: #C4C4C4;
+  border-radius: 20px;
+}
+
+.direction-info {
+  padding: 0 15px 30px 45px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.direction-info__text {
+  margin: 0;
+  max-width: 700px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #584D4D;
+}
+
+.direction-info__text:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+
+.direction-info__title {
+  margin: 20px 0 0;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #584D4D;
+}
+
+.direction-info__list {
+  margin: 10px 0 0;
+  padding: 0 0 0 20px;
+}
+
+.direction-info__list-item {
+  max-width: 700px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #584D4D;
+}
+
+.direction-info__list-item:not(:last-of-type) {
+  margin-bottom: 5px;
+}
+
+.direction-doctors__list {
+  list-style: none;
+  padding: 20px 15px 30px 45px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .direction-info {
+    padding-left: 15px;
+  }
+
+  .direction-doctors__list {
+    padding-left: 15px;
+  }
+}

@@ -1,1 +1,26 @@
-@import url(./blocks/styles.css);
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/fonts.css);
+
+@import url(./blocks/section-title.css);
+
+@import url(./blocks/page.css);
+@import url(./blocks/header-wrapper.css);
+@import url(./blocks/header.css);
+@import url(./blocks/lead.css);
+@import url(./blocks/directions.css);
+@import url(./blocks/cards.css);
+@import url(./blocks/card.css);
+@import url(./blocks/hr.css);
+@import url(./blocks/doctors.css);
+@import url(./blocks/about-wrapper.css);
+@import url(./blocks/about.css);
+@import url(./blocks/doctor-card.css);
+@import url(./blocks/contacts-wrapper.css);
+@import url(./blocks/contacts.css);
+@import url(./blocks/footer.css);
+@import url(./blocks/lead-wrapper.css);
+
+@import url(./blocks/direction-page.css);
+@import url(./blocks/doctor-card-direction.css);
+
+@import url(./blocks/doctor.css);

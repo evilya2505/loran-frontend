@@ -1,0 +1,15 @@
+.page {
+  position: relative;
+  font-family: 'Inter';
+  margin: 0 auto;
+  width: 100%;
+}
+
+.page__top-wrapper {
+  background: linear-gradient(279.51deg, #FFF3EA 54.49%, #F3F3F3 100%);
+}
+
+.page_type_no-scroll {
+  height: 100vh;
+  overflow: hidden;
+}

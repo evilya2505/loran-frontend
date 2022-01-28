@@ -1,0 +1,73 @@
+.doctor-card-direction {
+  background-color: white;
+  max-width: 500px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.doctor-card-direction__info {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  column-gap: 10px;
+}
+
+.doctor-card-direction__img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  background-color: #c4c4c4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.doctor-card-direction__title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 22px;
+
+  color: #584D4D;
+}
+
+.doctor-card-direction__subtitle {
+  align-self: end;
+  margin: 0;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 22px;
+  color: #6B6B6B;
+}
+
+.doctor-card-direction__link {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #A48764;
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 2px solid #A48764;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: #A48764;
+  align-self: flex-end;
+  transition: all .2s, opacity .2s linear;
+}
+
+.doctor-card-direction__link:hover {
+  opacity: .8;
+}
+
+@media screen and (max-width: 428px) {
+  .doctor-card-direction {
+    flex-direction: column;
+  }
+
+  .doctor-card-direction__link {
+    margin-top: 10px;
+    align-self: center;
+  }
+}

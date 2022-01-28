@@ -1,0 +1,22 @@
+.directions {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 52px 15px;
+}
+
+.directions__title {
+  margin: 0 0 30px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+  color: #5B5855;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 428px) {
+  .directions__title {
+    font-size: 16px;
+    line-height: 17px;
+    margin-bottom: 15px;
+  }
+}
