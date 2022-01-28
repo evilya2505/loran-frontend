@@ -17,6 +17,10 @@ function Directions({ handleMenuEl }) {
     handleMenuEl('directions', inView);
   }, [inView, handleMenuEl]);
 
+  function handleDirectionCardClick() {
+    window.scrollTo(0, 0);
+  }
+
   return (
     <section className="directions" id="directions" ref={ref}>
       <h2 className="directions__title">
@@ -24,13 +28,13 @@ function Directions({ handleMenuEl }) {
       </h2>
       <hr className="hr"></hr>
       <ul className="cards">
-        <Link to="./узи" className="cards__link" target="_blank"><Card title="УЗИ" imagePath={image1}/></Link>
-        <Link to="./узи" className="cards__link" target="_blank"><Card title="Генетическое тестирование" imagePath={image2}/></Link>
-        <Link to="./узи" className="cards__link" target="_blank"><Card title="Косметология" imagePath={image3}/></Link>
-        <Link to="./узи" className="cards__link" target="_blank"><Card title="Гинекология" imagePath={image4}/></Link>
-        <Link to="./узи" className="cards__link" target="_blank"><Card title="Гемабанк" imagePath={image5}/></Link>
-        <Link to="./узи" className="cards__link" target="_blank"><Card title="Акушерство" imagePath={image6}/></Link>
-        <Link to="./узи" className="cards__link" target="_blank"><Card title="Анализы" imagePath={image7}/></Link>
+        <Link to="./узи" className="cards__link" onClick={handleDirectionCardClick}><Card title="УЗИ" imagePath={image1}/></Link>
+        <Link to="./узи" className="cards__link" onClick={handleDirectionCardClick}><Card title="Генетическое тестирование" imagePath={image2}/></Link>
+        <Link to="./узи" className="cards__link" onClick={handleDirectionCardClick}><Card title="Косметология" imagePath={image3}/></Link>
+        <Link to="./узи" className="cards__link" onClick={handleDirectionCardClick}><Card title="Гинекология" imagePath={image4}/></Link>
+        <Link to="./узи" className="cards__link" onClick={handleDirectionCardClick}><Card title="Гемабанк" imagePath={image5}/></Link>
+        <Link to="./узи" className="cards__link" onClick={handleDirectionCardClick}><Card title="Акушерство" imagePath={image6}/></Link>
+        <Link to="./узи" className="cards__link" onClick={handleDirectionCardClick}><Card title="Анализы" imagePath={image7}/></Link>
       </ul>
     </section>
   )
