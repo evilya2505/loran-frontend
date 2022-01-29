@@ -28,7 +28,7 @@ function Header({ handlePageScroll, isAboutSectionVisible, isDirectionSectionVis
     }
   }
 
-  async function handleItemClick(e) {
+  function handleItemClick(e) {
     let redirectUrl;
     switch (e.target.textContent) {
       case 'О Нас':
@@ -48,7 +48,7 @@ function Header({ handlePageScroll, isAboutSectionVisible, isDirectionSectionVis
 
     closeMenu()
     .then(() => {
-      window.location.assign(`http://192.168.2.102:3000${redirectUrl}`);
+      window.location.assign(`https://loran-frontend.vercel.app${redirectUrl}`);
     })
   }
 
