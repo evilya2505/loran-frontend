@@ -23,16 +23,35 @@ function Header({ handlePageScroll, isAboutSectionVisible, isDirectionSectionVis
   function handleBtn(e) {
     if (e.target.classList.contains('header__menu-btn')) {
       setIsOpened(true);
-      document.querySelector('.header__list-item').addEventListener('click', handleItemClick);
     } else {
       setIsOpened(false);
-      document.querySelector('.header__list-item').removeEventListener('click', handleItemClick);
     }
   }
 
-  function handleItemClick() {
-    setIsOpened(false);
-    handlePageScroll(false);
+  function handleItemClick(e) {
+    let redirectUrl;
+    if (isOpened) {
+      setIsOpened(false);
+      handlePageScroll(false);
+    }
+
+    switch (e.target.textContent) {
+      case 'О Нас':
+        redirectUrl = '/#about-us';
+        break;
+      case 'Врачи':
+        redirectUrl = '/#doctors';
+        break;
+      case 'Контакты':
+        redirectUrl = '/#contacts';
+        break;
+      case 'Услуги':
+        redirectUrl = '/#directions';
+        break;
+      default: break;
+    }
+
+    window.location.href = `http://localhost:3000${redirectUrl}`;
   }
 
   function headerWrapperClass() {
@@ -57,10 +76,10 @@ function Header({ handlePageScroll, isAboutSectionVisible, isDirectionSectionVis
         <div className={isOpened ? `header__right-section header__right-section_opened` : `header__right-section`}>
           <ul className="header__list">
             <li className="header__list-item"><a className="header__list-link" href="./">Главная</a></li>
-            <li className="header__list-item"><a href="https://loran-frontend.vercel.app/#about-us" className={`header__list-link ${isAboutSectionVisible ? 'header__list-link_active' : ''}`}>О Нас</a></li>
-            <li className="header__list-item"><a className={`header__list-link ${isDirectionSectionVisible ? 'header__list-link_active' : ''}`} href="https://loran-frontend.vercel.app/#directions">Услуги</a></li>
-            <li className="header__list-item"><a className={`header__list-link ${isDoctorsSectionVisible ? 'header__list-link_active' : ''}`} href="https://loran-frontend.vercel.app/#doctors">Врачи</a></li>
-            <li className="header__list-item"><a className={`header__list-link ${isContactsSectionVisible ? 'header__list-link_active' : ''}`} href="https://loran-frontend.vercel.app/#contacts">Контакты</a></li>
+            <li className={`header__list-item ${isAboutSectionVisible ? 'header__list-link_active' : ''}`} onClick={handleItemClick}>О Нас</li>
+            <li className={`header__list-item ${isDirectionSectionVisible ? 'header__list-link_active' : ''}`} onClick={handleItemClick}>Услуги</li>
+            <li className={`header__list-item ${isDoctorsSectionVisible ? 'header__list-link_active' : ''}`} onClick={handleItemClick}>Врачи</li>
+            <li className={`header__list-item ${isContactsSectionVisible ? 'header__list-link_active' : ''}`} onClick={handleItemClick}>Контакты</li>
           </ul>
 
           <div className="header__contacts-wrapper">
