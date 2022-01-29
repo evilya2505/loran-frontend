@@ -23,9 +23,16 @@ function Header({ handlePageScroll, isAboutSectionVisible, isDirectionSectionVis
   function handleBtn(e) {
     if (e.target.classList.contains('header__menu-btn')) {
       setIsOpened(true);
+      document.querySelector('.header__list-item').addEventListener('click', handleItemClick);
     } else {
       setIsOpened(false);
+      document.querySelector('.header__list-item').removeEventListener('click', handleItemClick);
     }
+  }
+
+  function handleItemClick() {
+    setIsOpened(false);
+    handlePageScroll(false);
   }
 
   function headerWrapperClass() {
@@ -50,7 +57,7 @@ function Header({ handlePageScroll, isAboutSectionVisible, isDirectionSectionVis
         <div className={isOpened ? `header__right-section header__right-section_opened` : `header__right-section`}>
           <ul className="header__list">
             <li className="header__list-item"><a className="header__list-link" href="./">Главная</a></li>
-            <li className="header__list-item"><a target="_top" href="https://loran-frontend.vercel.app/#about-us" className={`header__list-link ${isAboutSectionVisible ? 'header__list-link_active' : ''}`}>О Нас</a></li>
+            <li className="header__list-item"><a href="https://loran-frontend.vercel.app/#about-us" className={`header__list-link ${isAboutSectionVisible ? 'header__list-link_active' : ''}`}>О Нас</a></li>
             <li className="header__list-item"><a className={`header__list-link ${isDirectionSectionVisible ? 'header__list-link_active' : ''}`} href="https://loran-frontend.vercel.app/#directions">Услуги</a></li>
             <li className="header__list-item"><a className={`header__list-link ${isDoctorsSectionVisible ? 'header__list-link_active' : ''}`} href="https://loran-frontend.vercel.app/#doctors">Врачи</a></li>
             <li className="header__list-item"><a className={`header__list-link ${isContactsSectionVisible ? 'header__list-link_active' : ''}`} href="https://loran-frontend.vercel.app/#contacts">Контакты</a></li>
