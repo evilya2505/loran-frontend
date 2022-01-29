@@ -58,10 +58,10 @@ function Header({ handlePageScroll, isAboutSectionVisible, isDirectionSectionVis
         <div className={isOpened ? `header__right-section header__right-section_opened` : `header__right-section`}>
           <ul className="header__list">
             <li className="header__list-item"><a className="header__list-link" href="./">Главная</a></li>
-            <li className="header__list-item"><a className={`header__list-link ${isAboutSectionVisible ? 'header__list-link_active' : ''}`} href="./#about-us" onClick={handleMenuItemClick}>О Нас</a></li>
-            <li className="header__list-item"><a className={`header__list-link ${isDirectionSectionVisible ? 'header__list-link_active' : ''}`} href="./#directions" onClick={handleMenuItemClick}>Услуги</a></li>
-            <li className="header__list-item"><a className={`header__list-link ${isDoctorsSectionVisible ? 'header__list-link_active' : ''}`} href="./#doctors" onClick={handleMenuItemClick}>Врачи</a></li>
-            <li className="header__list-item"><a className={`header__list-link ${isContactsSectionVisible ? 'header__list-link_active' : ''}`} href="./#contacts" onClick={handleMenuItemClick}>Контакты</a></li>
+            <li className="header__list-item"><a className={`header__list-link ${isAboutSectionVisible ? 'header__list-link_active' : ''}`} href="https://loran-frontend.vercel.app/#about-us" onClick={handleMenuItemClick}>О Нас</a></li>
+            <li className="header__list-item"><a className={`header__list-link ${isDirectionSectionVisible ? 'header__list-link_active' : ''}`} href="https://loran-frontend.vercel.app/#directions" onClick={handleMenuItemClick}>Услуги</a></li>
+            <li className="header__list-item"><a className={`header__list-link ${isDoctorsSectionVisible ? 'header__list-link_active' : ''}`} href="https://loran-frontend.vercel.app/#doctors" onClick={handleMenuItemClick}>Врачи</a></li>
+            <li className="header__list-item"><a className={`header__list-link ${isContactsSectionVisible ? 'header__list-link_active' : ''}`} href="https://loran-frontend.vercel.app/#contacts" onClick={handleMenuItemClick}>Контакты</a></li>
           </ul>
 
           <div className="header__contacts-wrapper">
