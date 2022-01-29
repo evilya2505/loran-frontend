@@ -51,7 +51,8 @@ function Header({ handlePageScroll, isAboutSectionVisible, isDirectionSectionVis
       default: break;
     }
 
-    window.location.href = `https://loran-frontend.vercel.app${redirectUrl}`;
+    window.location.assign(`https://loran-frontend.vercel.app${redirectUrl}`);
+    window.location.reload();
   }
 
   function headerWrapperClass() {
