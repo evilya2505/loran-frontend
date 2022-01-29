@@ -1,13 +1,12 @@
 import React from 'react';
 import logoPath from '../images/logo.svg'
 import locationPath from '../images/location.svg';
-import { useLocation, Link, useHistory } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 function Header({ handlePageScroll, isAboutSectionVisible, isDirectionSectionVisible, isDoctorsSectionVisible, isContactsSectionVisible }) {
   const [isOpened, setIsOpened] = React.useState(false);
   const [isSticky, setIsSticky] = React.useState(false);
   const location = useLocation();
-  let history = useHistory();
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 0 && document.body.clientWidth >= 768) {
