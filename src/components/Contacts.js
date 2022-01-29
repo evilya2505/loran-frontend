@@ -27,11 +27,15 @@ function Contacts({ handleMenuEl }) {
             <div className="contacts__info-item">
               <img src={phonePath} className="contacts__info-icon" alt="иконка телефона"/>
               <h4 className="contacts__info-title">Номер телефона:</h4>
-              <p className="contacts__info-subtitle">+ 39-90-90</p>
+              <a href="tel:+39-90-90" className="contacts__info-subtitle contacts__info-phone">+ 39-90-90</a>
             </div>
             <div className="contacts__info-item">
-              <img className="contacts__info-icon" alt="иконка инстаграма" src={instagramIcon} />
-              <p className="contacts__info-subtitle">@vehicula</p>
+              <a className="contacts__info-link" href="https://www.instagram.com/klinika_loran/" target="_blank" rel="noreferrer">
+                <img className="contacts__info-icon" alt="иконка инстаграма" src={instagramIcon} />
+              </a>
+              <a className="contacts__info-link" href="https://www.instagram.com/klinika_loran/" target="_blank" rel="noreferrer">
+                <p className="contacts__info-subtitle">@klinika_loran</p>
+              </a>
             </div>
           </div>
         </div>

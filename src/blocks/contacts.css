@@ -38,6 +38,10 @@
   color: #5B5855;
 }
 
+.contacts__info-phone {
+  text-decoration: none;
+}
+
 .contacts__info-item {
   display: flex;
   align-items: center;
@@ -50,6 +54,11 @@
 .contacts__info-icon {
   margin-right: 10px;
   width: 25px;
+}
+
+.contacts__info-link {
+  text-decoration: none;
+  color: #5B5855;
 }
 
 @media screen and (max-width: 900px) {
