@@ -1,13 +1,13 @@
 import React from 'react';
 import logoPath from '../images/logo.svg'
 import locationPath from '../images/location.svg';
-import { useLocation, Link } from 'react-router-dom';
-
+import { useLocation, Link, useHistory } from 'react-router-dom';
 
 function Header({ handlePageScroll, isAboutSectionVisible, isDirectionSectionVisible, isDoctorsSectionVisible, isContactsSectionVisible }) {
   const [isOpened, setIsOpened] = React.useState(false);
   const [isSticky, setIsSticky] = React.useState(false);
   const location = useLocation();
+  let history = useHistory();
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 0 && document.body.clientWidth >= 768) {
@@ -26,13 +26,6 @@ function Header({ handlePageScroll, isAboutSectionVisible, isDirectionSectionVis
       setIsOpened(true);
     } else {
       setIsOpened(false);
-    }
-  }
-
-  function handleMenuItemClick() {
-    if (isOpened) {
-      setIsOpened(false);
-      handlePageScroll(isOpened);
     }
   }
 
@@ -58,10 +51,10 @@ function Header({ handlePageScroll, isAboutSectionVisible, isDirectionSectionVis
         <div className={isOpened ? `header__right-section header__right-section_opened` : `header__right-section`}>
           <ul className="header__list">
             <li className="header__list-item"><a className="header__list-link" href="./">Главная</a></li>
-            <li className="header__list-item"><a className={`header__list-link ${isAboutSectionVisible ? 'header__list-link_active' : ''}`} href="https://loran-frontend.vercel.app/#about-us" onClick={handleMenuItemClick}>О Нас</a></li>
-            <li className="header__list-item"><a className={`header__list-link ${isDirectionSectionVisible ? 'header__list-link_active' : ''}`} href="https://loran-frontend.vercel.app/#directions" onClick={handleMenuItemClick}>Услуги</a></li>
-            <li className="header__list-item"><a className={`header__list-link ${isDoctorsSectionVisible ? 'header__list-link_active' : ''}`} href="https://loran-frontend.vercel.app/#doctors" onClick={handleMenuItemClick}>Врачи</a></li>
-            <li className="header__list-item"><a className={`header__list-link ${isContactsSectionVisible ? 'header__list-link_active' : ''}`} href="https://loran-frontend.vercel.app/#contacts" onClick={handleMenuItemClick}>Контакты</a></li>
+            <li className="header__list-item"><a target="_top" href="https://loran-frontend.vercel.app/#about-us" className={`header__list-link ${isAboutSectionVisible ? 'header__list-link_active' : ''}`}>О Нас</a></li>
+            <li className="header__list-item"><a className={`header__list-link ${isDirectionSectionVisible ? 'header__list-link_active' : ''}`} href="https://loran-frontend.vercel.app/#directions">Услуги</a></li>
+            <li className="header__list-item"><a className={`header__list-link ${isDoctorsSectionVisible ? 'header__list-link_active' : ''}`} href="https://loran-frontend.vercel.app/#doctors">Врачи</a></li>
+            <li className="header__list-item"><a className={`header__list-link ${isContactsSectionVisible ? 'header__list-link_active' : ''}`} href="https://loran-frontend.vercel.app/#contacts">Контакты</a></li>
           </ul>
 
           <div className="header__contacts-wrapper">
