@@ -124,10 +124,9 @@
 
   .lead__btn {
     bottom: 10px;
-    width: 100px;
-    height: 30px;
     font-size: 10px;
     line-height: 11px;
+    padding: 10px 20px;
   }
 
 }

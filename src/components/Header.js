@@ -28,13 +28,8 @@ function Header({ handlePageScroll, isAboutSectionVisible, isDirectionSectionVis
     }
   }
 
-  function handleItemClick(e) {
+  async function handleItemClick(e) {
     let redirectUrl;
-    if (isOpened) {
-      setIsOpened(false);
-      handlePageScroll(false);
-    }
-
     switch (e.target.textContent) {
       case 'О Нас':
         redirectUrl = '/#about-us';
@@ -51,7 +46,19 @@ function Header({ handlePageScroll, isAboutSectionVisible, isDirectionSectionVis
       default: break;
     }
 
-    window.location.assign(`https://loran-frontend.vercel.app${redirectUrl}`).reload();
+    closeMenu()
+    .then(() => {
+      window.location.assign(`http://192.168.2.102:3000${redirectUrl}`);
+    })
+  }
+
+  async function closeMenu() {
+    if (isOpened) {
+      setIsOpened(false);
+      handlePageScroll(false);
+    }
+
+    return Promise.resolve(1);
   }
 
   function headerWrapperClass() {
