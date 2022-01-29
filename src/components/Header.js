@@ -10,7 +10,7 @@ function Header({ handlePageScroll, isAboutSectionVisible, isDirectionSectionVis
   const location = useLocation();
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 0) {
+    if (window.scrollY > 0 && document.body.clientWidth >= 768) {
       setIsSticky(true);
     } else {
       setIsSticky(false);
