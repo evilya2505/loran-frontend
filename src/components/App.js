@@ -62,9 +62,35 @@ function App() {
           <DirectionPage handlePageScroll={handlePageScroll} title='Узи'/>
         </Route>
 
-        <Route exact path="/тестовый-врач">
-          <DoctorPage handlePageScroll={handlePageScroll} name="MATTIS Odio Vehicula"/>
+        <Route exact path="/косметология">
+          <DirectionPage handlePageScroll={handlePageScroll} title='Косметология'/>
         </Route>
+
+        <Route exact path="/гемабанк">
+          <DirectionPage handlePageScroll={handlePageScroll} title='Гемабанк'/>
+        </Route>
+
+        <Route exact path="/gurzhiy-andrey-alexandrovich">
+          <DoctorPage
+            handlePageScroll={handlePageScroll}
+            name="Гуржий Андрей Александрович"
+            infoObj={{direction: "Врач акушер-гинеколог", time: "Время приема: Понедельник, Среда , Пятница с 16-30 до 19-00", education:"Закончил Амурскую Государственную Медицинскую академию в 1996г"}}/>
+        </Route>
+
+        <Route exact path="/gorbunov-vyacheslav-alexandrovich">
+          <DoctorPage
+            handlePageScroll={handlePageScroll}
+            name="Горбунов Вячеслав Александрович"
+            infoObj={{direction: "Врач ультразвуковой диагностики", time: "Понедельник, Среда , Пятница с 16-30 до 19-00", education:"Закончил Амурскую Государственную Медицинскую академию в 1996г"}}/>
+        </Route>
+
+        <Route exact path="/gulevich-evgeniya-alexandrovna">
+          <DoctorPage
+            handlePageScroll={handlePageScroll}
+            name="Гулевич Евгения Александровна"
+            infoObj={{direction: "Врач акушер-гинеколог", time: "Вторник, Четверг с 16-30 до 19-00", education:"Закончил Амурскую Государственную Медицинскую академию в 2012г"}}/>
+        </Route>
+
       </Switch>
       <Footer />
     </div>
