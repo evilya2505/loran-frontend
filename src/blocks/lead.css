@@ -57,11 +57,16 @@
 
 .lead__phone-number {
   margin: 5px 0 0;
-
+  text-decoration: none;
   font-weight: normal;
   font-size: 18px;
   line-height: 22px;
   color: #584D4D;
+}
+
+.lead__phone-number:hover {
+  opacity: .8;
+  transition: all .2s, opacity .2s linear;
 }
 
 .lead__img-wrapper {
