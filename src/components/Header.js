@@ -51,7 +51,7 @@ function Header({ handlePageScroll, isAboutSectionVisible, isDirectionSectionVis
 
     closeMenu()
     .then(() => {
-      window.location.assign(`https://loran-frontend.vercel.app${redirectUrl}`);
+      window.location.assign(`http://178.216.96.102${redirectUrl}`);
     })
   }
 
