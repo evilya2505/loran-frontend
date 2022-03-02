@@ -39,7 +39,24 @@
 }
 
 .lead__subtitle {
-  margin: 17px 0 40px;
+  margin: 17px 0 0;
+
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #584D4D;
+}
+
+.lead__phone-numbers {
+  max-width: 190px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  text-align: end;
+}
+
+.lead__phone-number {
+  margin: 5px 0 0;
 
   font-weight: normal;
   font-size: 18px;
@@ -104,6 +121,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .lead__phone-numbers {
+    text-align: end;
+    margin: 0 auto 30px;
+  }
   .lead {
     flex-direction: column;
     max-width: 728px;

@@ -94,11 +94,11 @@ function Header({ handlePageScroll, isAboutSectionVisible, isDirectionSectionVis
             <li className={`header__list-item ${(location.pathname === '/prices' && document.body.clientWidth > 768) ? 'header__list-link_active' : ''}`} onClick={handleItemClick}>Цены</li>
           </ul>
 
-          <div className="header__contacts-wrapper">
+          {/* <div className="header__contacts-wrapper">
             <img className="header__contacts-icon" src={locationPath} alt="изображение локация"></img>
             <p className="header__contacts">пр.Победы, 106</p>
             <p className="header__contacts">+ 39-90-90</p>
-          </div>
+          </div> */}
 
         </div>
 
