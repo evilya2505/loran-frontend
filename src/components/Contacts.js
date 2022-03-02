@@ -26,7 +26,9 @@ function Contacts({ handleMenuEl }) {
             </div>
             <div className="contacts__info-item">
               <img src={phonePath} className="contacts__info-icon" alt="иконка телефона"/>
-              <h4 className="contacts__info-title">Номер телефона:</h4>
+              <h4 className="contacts__info-title">Номерa телефона:</h4>
+              <a href="tel:8 (94242) 76 00 79" className="contacts__info-subtitle contacts__info-phone">8 (94242) 76 00 79, </a>
+              <a href="tel:+29-90-90" className="contacts__info-subtitle contacts__info-phone">+ 29-90-90, </a>
               <a href="tel:+39-90-90" className="contacts__info-subtitle contacts__info-phone">+ 39-90-90</a>
             </div>
             <div className="contacts__info-item">
