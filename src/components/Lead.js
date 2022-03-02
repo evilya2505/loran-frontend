@@ -7,11 +7,12 @@ function Lead(props) {
       <section className="lead">
         <div className="lead__texts">
           <h1 className="lead__title">
-            Consult a doctor anytime, anywhere by video call
+            Проконсультируйтесь с врачом в любое время и в любом месте по телефону
           </h1>
           <p className="lead__subtitle">
-            Vivamus feugiat sapien sit amet pulvinar suscipit.
+            Телефоны для записи: 8 (94242) 76 00 79, +39&#8209;90&#8209;90
           </p>
+          <a className="lead__link" href="https://med.sakh.com/clinic-loran">Запись через сайт</a>
         </div>
         <div className="lead__img-section">
           <div className="lead__img-wrapper"/>

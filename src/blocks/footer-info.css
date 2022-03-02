@@ -1,0 +1,18 @@
+.footer-info-wrapper {
+  background-color: #F6F6F6;
+}
+
+.footer-info {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  justify-content: space-between;
+  border-bottom: .5 solid red;
+  padding: 30px 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-info {
+    justify-content: center;
+  }
+}

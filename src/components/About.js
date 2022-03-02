@@ -16,11 +16,9 @@ function About({ handleMenuEl }) {
         <hr className="hr"></hr>
         <div className="about__info">
           <div className="about__text">
-            <h3 className="about__text-title">Donec quis mattis felis</h3>
+            {/* <h3 className="about__text-title">Donec quis mattis felis</h3> */}
             <p className="about__text-subtitle">
-              Donec quis mattis felis, tristique bibendum risus. Duis suscipit, purus ac malesuada sagittis,
-            lorem orci pulvinar ex, sed ornare sem ex ac massa. Fusce sodales pretium enim vel interdum.
-            Suspendisse blandit dolor sit amet risus efficitur egestas.
+            Клиника создана в 2021 для оказания помощи прекрасной половине человечества. Мы предлагаем инновационные методы лечения и диагностики.
             </p>
           </div>
           <img className="about__img" src={imagePath} alt="изображение клиники"></img>

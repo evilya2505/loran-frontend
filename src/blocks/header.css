@@ -46,7 +46,7 @@
   border-bottom: 2px solid #5B5855;
 }
 
-.header__list-link:hover {
+.header__list-item:hover {
   opacity: .8;
 }
 
@@ -115,6 +115,12 @@
   width: 20px;
   grid-row-start: 1;
   grid-row-end: 3;
+}
+
+@media screen and (max-width: 1024px) {
+  .header__list-item:not(:last-of-type) {
+    margin-right: 20px;
+  }
 }
 
 @media screen and (max-width: 768px) {

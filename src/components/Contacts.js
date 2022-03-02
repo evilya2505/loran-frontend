@@ -30,13 +30,20 @@ function Contacts({ handleMenuEl }) {
               <a href="tel:+39-90-90" className="contacts__info-subtitle contacts__info-phone">+ 39-90-90</a>
             </div>
             <div className="contacts__info-item">
-              <a className="contacts__info-link" href="https://www.instagram.com/klinika_loran/" target="_blank" rel="noreferrer">
-                <img className="contacts__info-icon" alt="иконка инстаграма" src={instagramIcon} />
-              </a>
+              <img className="contacts__info-icon" alt="иконка инстаграма" src={instagramIcon} />
               <a className="contacts__info-link" href="https://www.instagram.com/klinika_loran/" target="_blank" rel="noreferrer">
                 <p className="contacts__info-subtitle">@klinika_loran</p>
               </a>
+
+              <a className="contacts__info-link" href="https://www.instagram.com/doctors65/" target="_blank" rel="noreferrer">
+                <p className="contacts__info-subtitle">@doctors65</p>
+              </a>
             </div>
+            <div className="contacts__info-item contacts__info-item_type_no-icon">
+              <h4 className="contacts__info-title">График&nbsp;работы:</h4>
+              <p className="contacts__info-subtitle">в будние дни с 10:00 до 20:00, в cубботу с 10:00 до 14:00, воскресенье выходной</p>
+            </div>
+
           </div>
         </div>
       </section>

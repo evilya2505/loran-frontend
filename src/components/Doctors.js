@@ -14,9 +14,9 @@ function Doctors({ handleMenuEl }) {
       <h3 className="doctors__title">Врачи</h3>
       <hr className="hr" />
       <ul className="doctors__cards">
-        <DoctorCard info="Lorem, Ipsum" name="MATTIS Odio Vehicula"/>
-        <DoctorCard info="Lorem, Ipsum" name="MATTIS Odio Vehicula"/>
-        <DoctorCard info="Lorem, Ipsum" name="MATTIS Odio Vehicula"/>
+        <DoctorCard info="Врач акушер-гинеколог" name="Гуржий Андрей Александрович" link="./gurzhiy-andrey-alexandrovich" />
+        <DoctorCard info="Врач ультразвуковой диагностики" name="Горбунов Вячеслав Александрович" link="./gorbunov-vyacheslav-alexandrovich" />
+        <DoctorCard info="Врач акушер-гинеколог" name="Гулевич Евгения Александровна" link="./gulevich-evgeniya-alexandrovna" />
       </ul>
     </section>
   );
