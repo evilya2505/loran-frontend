@@ -9,9 +9,15 @@ function Lead(props) {
           <h1 className="lead__title">
             Проконсультируйтесь с врачом в любое время и в любом месте по телефону
           </h1>
-          <p className="lead__subtitle">
-            Телефоны для записи: 8 (94242) 76 00 79, +39&#8209;90&#8209;90
-          </p>
+
+          <div className="lead__phone-numbers">
+            <p className="lead__subtitle">
+              Телефон для записи:
+            </p>
+            <a href="tel:8 (94242) 76 00 79" className="lead__phone-number">8 (94242) 76 00 79</a>
+            <a href="tel:+39-90-90" className="lead__phone-number">+39-90-90</a>
+            <a href="tel:+29-90-90" className="lead__phone-number">+29-90-90</a>
+          </div>
           <a className="lead__link" href="https://med.sakh.com/clinic-loran">Запись через сайт</a>
         </div>
         <div className="lead__img-section">

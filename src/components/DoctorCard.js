@@ -18,9 +18,13 @@ function DoctorCard({ name, link, info }) {
     }
   }
 
+  function handleDirectionCardClick() {
+    window.scrollTo(0, 0);
+  }
+
   return (
     <li className="doctor-card doctors__card">
-      <Link to={link} className="doctor-card__link">
+      <Link to={link} className="doctor-card__link" onClick={handleDirectionCardClick}>
         <img src={setDoctorImgPath()} className="doctor-card__img" alt="изображение врача" />
         <div className="doctor-card__info">
           <p className="doctor-card__subtitle">{info}</p>
