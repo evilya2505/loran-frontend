@@ -43,6 +43,9 @@ function Header({ handlePageScroll, isAboutSectionVisible, isDirectionSectionVis
       case 'Услуги':
         redirectUrl = '/#directions';
         break;
+      case 'Цены':
+        redirectUrl = '/prices';
+        break;
       default: break;
     }
 
@@ -87,6 +90,8 @@ function Header({ handlePageScroll, isAboutSectionVisible, isDirectionSectionVis
             <li className={`header__list-item ${isDirectionSectionVisible ? 'header__list-link_active' : ''}`} onClick={handleItemClick}>Услуги</li>
             <li className={`header__list-item ${isDoctorsSectionVisible ? 'header__list-link_active' : ''}`} onClick={handleItemClick}>Врачи</li>
             <li className={`header__list-item ${isContactsSectionVisible ? 'header__list-link_active' : ''}`} onClick={handleItemClick}>Контакты</li>
+            {console.log(document.body.clientWidth, location.pathname)}
+            <li className={`header__list-item ${(location.pathname === '/prices' && document.body.clientWidth > 768) ? 'header__list-link_active' : ''}`} onClick={handleItemClick}>Цены</li>
           </ul>
 
           <div className="header__contacts-wrapper">

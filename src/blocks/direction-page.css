@@ -1,10 +1,12 @@
 .direction-page {
   background-color: #F6F6F6;
   padding: 20px 0 30px;
+  box-sizing: content-box;
+  height: 290px;
 }
 
 .direction-lead {
-  padding: 0 15px 30px;
+  padding: 0 15px 0;
   max-width: 1140px;
   margin: 0 auto;
 }
@@ -26,30 +28,25 @@
 }
 
 .direction-info {
-  padding: 0 15px 30px 45px;
+  padding: 0 15px 30px 15px;
   max-width: 1140px;
   margin: 0 auto;
 }
 
 .direction-info__text {
-  margin: 0;
+  margin: 0 0 15px;
   max-width: 700px;
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-
   color: #584D4D;
-}
-
-.direction-info__text:not(:last-of-type) {
-  margin-bottom: 15px;
 }
 
 .direction-info__title {
   margin: 20px 0 0;
   font-weight: bold;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 17px;
+  line-height: 20px;
   color: #584D4D;
 }
 
@@ -85,5 +82,9 @@
 
   .direction-doctors__list {
     padding-left: 15px;
+  }
+
+  .direction-page {
+    height: auto;
   }
 }

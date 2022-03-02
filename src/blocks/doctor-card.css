@@ -3,6 +3,7 @@
   height: 306px;
   border-radius: 20px;
   background-color: #C4C4C4;
+  object-fit: cover;
 }
 
 .doctor-card__info {

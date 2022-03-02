@@ -1,0 +1,40 @@
+.prices-wrapper {
+  background-color: #F6F6F6;
+  padding: 20px 0 30px;
+}
+
+.prices {
+  padding: 0 15px 30px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.prices__title {
+  margin: 0 0 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 23px;
+  color: #A48764;
+}
+
+.prices__table {
+  margin: 0 auto;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.prices__table-th {
+  border: 1px solid #5B5855;
+  color: #464646;
+}
+
+.prices__table-td {
+  border: 1px solid #5B5855;
+  text-align: center;
+  color: #464646;
+}
+
+.prices__text {
+  color: #464646;
+}
