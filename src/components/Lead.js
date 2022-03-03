@@ -18,7 +18,7 @@ function Lead(props) {
             <a href="tel:+39-90-90" className="lead__phone-number">+39-90-90</a>
             <a href="tel:+29-90-90" className="lead__phone-number">+29-90-90</a>
           </div>
-          <a className="lead__link" href="https://med.sakh.com/clinic-loran">Запись через сайт</a>
+          <a className="lead__link" href="https://med.sakh.com/clinic-loran" target="_blank" rel="noreferrer">Запись через сайт</a>
         </div>
         <div className="lead__img-section">
           <div className="lead__img-wrapper"/>
