@@ -23,6 +23,13 @@ function Footer(props) {
               <li className="footer__list-item"><span className='footer__list-item_type_bold'>Фактический адрес:</span> 693000, г.Южно-Сахалинск, пр.Победы 10-Б, помещение 20</li>
             </ul>
 
+
+            <ul className="footer__list">
+              <h3 className="footer__list-title">Адреса органов исполнительной власти субъекта РФ</h3>
+              <li className="footer__list-item"><a className="footer__list-link" href="./">Роспотребнадзор: г.Южно-Сахалинск,  ул. Чехова, д.30, тел.8(4242)495200</a></li>
+              <li className="footer__list-item"><a className="footer__list-link" href="./#about-us">Росздравнадзор: г.Южно-Сахалинск,  ул.К.Маркса, д.24, тел. 8(4242)728557</a></li>
+            </ul>
+
             <p className="footer__credits">&copy; 2021-2022 Клиника “Лоран”.</p>
           </div>
 
