@@ -1,10 +1,12 @@
 .footer {
   max-width: 1140px;
   margin: 0 auto;
-  /* display: flex;
-  justify-content: space-between; */
   border-bottom: .5 solid red;
   padding: 30px 15px;
+}
+
+.footer__logo {
+  width: 166px;
 }
 
 .footer__content {
@@ -84,6 +86,15 @@
 
 }
 
+.footer__info-text {
+  margin: 5px 0 0;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #5b5855ab;
+}
+
+
 @media screen and (max-width: 768px) {
   .footer__content {
     flex-direction: column;
@@ -109,6 +120,12 @@
 
   .footer__credits {
     text-align: center;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 

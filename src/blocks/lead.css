@@ -138,7 +138,7 @@
   .lead__texts {
     width: 90%;
     text-align: center;
-    margin-bottom: 30px;
+    margin: 0 auto 30px;
   }
 
   .lead__img-section {

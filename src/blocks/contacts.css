@@ -116,6 +116,14 @@
   }
 }
 
+@media screen and (max-width: 600px) {
+  .contacts__info-phone-nums{
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
 @media screen and (max-width: 428px) {
   .contacts__iframe {
     width: 300px;

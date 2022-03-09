@@ -44,7 +44,8 @@ function DoctorPage( { handlePageScroll, name, infoObj } ) {
 
               <ul className="doctor-content__list">
                 <li className="doctor-content__list-item">Время приема: {infoObj.time}</li>
-                <li className="doctor-content__list-item">Образование: {infoObj.education}</li>
+                <li className="doctor-content__list-item">{infoObj.education}</li>
+                <li className="doctor-content__list-item">Учеба: {infoObj.university}</li>
               </ul>
             </div>
           </section>
