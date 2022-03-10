@@ -38,8 +38,13 @@ function Footer(props) {
 
             <ul className="footer__list">
               <h3 className="footer__list-title">Адреса органов исполнительной власти субъекта РФ</h3>
-              <li className="footer__list-item"><a className="footer__list-link" href="./">Роспотребнадзор: г.Южно-Сахалинск,  ул. Чехова, д.30, тел.8(4242)495200</a></li>
-              <li className="footer__list-item"><a className="footer__list-link" href="./#about-us">Росздравнадзор: г.Южно-Сахалинск,  ул.К.Маркса, д.24, тел. 8(4242)728557</a></li>
+              <li className="footer__list-item">Роспотребнадзор: г.Южно-Сахалинск,  ул. Чехова, д.30, тел.8(4242)495200</li>
+              <li className="footer__list-item">Росздравнадзор: г.Южно-Сахалинск,  ул.К.Маркса, д.24, тел. 8(4242)728557</li>
+            </ul>
+
+            <ul className="footer__list">
+              <li className="footer__list-item"><span className='footer__list-item_type_bold'> Лицензия: </span>ЛО - 65-01-001453 Выдана Министерством здравоохранения Сахалинской области 15.03.2021г.</li>
+              <li className="footer__list-item">Адрес: г.Южно-Сахалинск,  ул.К.Маркса 24, тел.8(4242)46-21-34.</li>
             </ul>
 
           </div>
