@@ -1,23 +1,36 @@
-import Header from './Header';
-// import { Link } from 'react-router-dom';
+import React from "react";
+import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 
-function DirectionPage( { handlePageScroll, title, description }) {
+function DirectionPage() {
+  const directions = useSelector((store) => store.directions.directions);
+  const [direction, setDirection] = React.useState({});
+  const location = useLocation();
+  React.useEffect(() => {
+    // находит объект нужного направления из массива по пути
+    directions.forEach((direction) => {
+      if (
+        `${direction.path}` ===
+        location.pathname.split("/")[location.pathname.split("/").length - 1]
+      ) {
+        setDirection(direction);
+      }
+    });
+  }, [directions, location.pathname]);
+
   return (
     <>
-      <Header handlePageScroll={handlePageScroll} />
       <main className="direction-page">
         <section className="direction-lead">
-          <h1 className="direction-lead__title">{title}</h1>
+          <h1 className="direction-lead__title">{direction.name}</h1>
           {/* <div className="direction-lead__img" /> */}
         </section>
 
         <section className="direction-info">
-          {description.map(paragraph => {
-            return (
-              <p className="direction-info__text">{paragraph}</p>
-            )
-          })}
-          <a href="./prices" className="direction-info__title">Цены</a>
+          <p className="direction-info__text">{direction.description}</p>
+          <a href="./prices" className="direction-info__title">
+            Цены
+          </a>
 
           {/* <ul className="direction-info__list">
             <li className="direction-info__list-item">Aliquam sit amet consequat sapien.</li>
@@ -42,7 +55,7 @@ function DirectionPage( { handlePageScroll, title, description }) {
         </section> */}
       </main>
     </>
-  )
+  );
 }
 
 export default DirectionPage;

@@ -1,0 +1,29 @@
+.input__title {
+  font-size: 14px;
+  margin: 5px 0 5px;
+}
+
+.input__input {
+  font-size: 14px;
+
+  color: #272524;
+  padding: 10px;
+  border-radius: 10px;
+  border-color: #a48764;
+  width: 100%;
+  height: 30px;
+  resize: none;
+
+  -webkit-transition: all 0.2s, opacity 0.2s linear;
+  -o-transition: all 0.2s, opacity 0.2s linear;
+  transition: all 0.2s, opacity 0.2s linear;
+}
+
+.input__input:focus {
+  border-color: #fce4c8;
+  outline: none; /* Убирает стандартный контур фокуса */
+  box-shadow: 0 0 5px #a48764;
+}
+.input__input::-webkit-scrollbar {
+  width: 0px;
+}

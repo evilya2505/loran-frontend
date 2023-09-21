@@ -1,12 +1,13 @@
 .page {
   position: relative;
-  font-family: 'Inter';
+  font-family: "Inter";
   margin: 0 auto;
   width: 100%;
 }
 
 .page__top-wrapper {
-  background: linear-gradient(279.51deg, #FFF3EA 54.49%, #F3F3F3 100%);
+  margin: 0;
+  background: linear-gradient(279.51deg, #fff3ea 54.49%, #f3f3f3 100%);
 }
 
 .page_type_no-scroll {

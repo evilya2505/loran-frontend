@@ -2,32 +2,81 @@ import Main from "./Main";
 import Header from "./Header";
 import Lead from "./Lead";
 import Footer from "./Footer";
-import { Switch ,Route } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import React from "react";
 import DoctorPage from "./DoctorPage";
 import DirectionPage from "./DirectionPage";
 import PricesPage from "./PricesPage";
-
+import { useDispatch, useSelector } from "react-redux";
+import { getDoctors } from "../services/actions/doctors";
+import { getServices } from "../services/actions/services";
+import LoginPage from "./LoginPage";
+import { authorization, getUserInfo } from "../services/actions/auth";
+import { getDirections } from "../services/actions/directions";
+import EditorDoctorsDetails from "./EditorDoctorsDetails";
+import EditorPage from "./EditorPage";
+import Modal from "./Modal";
+import { SET_CURRENT_DOCTOR_INFO } from "../services/actions/doctors";
 function App() {
   const [isScrollAllowed, setIsScrollAllowed] = React.useState(true);
-  const [isAboutSectionVisible, setAboutSectionVisibility] = React.useState(false);
-  const [isDoctorsSectionVisible, setDoctorsSectionVisibility] = React.useState(false);
-  const [isContactsSectionVisible, setContactsSectionVisibility] = React.useState(false);
-  const [isDirectionSectionVisible, setDirectionSectionVisibility] = React.useState(false);
+  const [isAboutSectionVisible, setAboutSectionVisibility] =
+    React.useState(false);
+  const [isDoctorsSectionVisible, setDoctorsSectionVisibility] =
+    React.useState(false);
+  const [isContactsSectionVisible, setContactsSectionVisibility] =
+    React.useState(false);
+  const [isDirectionSectionVisible, setDirectionSectionVisibility] =
+    React.useState(false);
+  const [isConfirmationModalVisible, setIsConfirmationModalVisible] =
+    React.useState(false);
+  const userInfo = useSelector((store) => store.auth.userInfo);
+  const loggedIn = useSelector((store) => store.auth.loggedIn);
+  const currentDoctor = useSelector((store) => store.doctors.currentDoctorInfo);
+  const isOnSubmit = useSelector((store) => store.form.isOnSubmit);
+
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const navigate = useNavigate();
+  React.useEffect(() => {
+    dispatch(getDoctors());
+    dispatch(getServices());
+    dispatch(getDirections());
+  }, [dispatch]);
+
+  React.useEffect(() => {
+    if (!loggedIn) {
+      dispatch(getUserInfo());
+    }
+
+    if (
+      location.pathname.includes("/admin/login") &&
+      JSON.stringify(userInfo) !== "{}"
+    ) {
+      navigate("/");
+    }
+  }, [location.pathname, navigate, userInfo]);
 
   function handleMenuEl(element, isVisible) {
     switch (element) {
-      case 'about':
-        isVisible ? setAboutSectionVisibility(true) : setAboutSectionVisibility(false);
+      case "about":
+        isVisible
+          ? setAboutSectionVisibility(true)
+          : setAboutSectionVisibility(false);
         break;
-      case 'doctors':
-        isVisible ? setDoctorsSectionVisibility(true) : setDoctorsSectionVisibility(false);
+      case "doctors":
+        isVisible
+          ? setDoctorsSectionVisibility(true)
+          : setDoctorsSectionVisibility(false);
         break;
-      case 'contacts':
-        isVisible ? setContactsSectionVisibility(true) : setContactsSectionVisibility(false);
+      case "contacts":
+        isVisible
+          ? setContactsSectionVisibility(true)
+          : setContactsSectionVisibility(false);
         break;
-      case 'directions':
-        isVisible ? setDirectionSectionVisibility(true) : setDirectionSectionVisibility(false);
+      case "directions":
+        isVisible
+          ? setDirectionSectionVisibility(true)
+          : setDirectionSectionVisibility(false);
         break;
       default:
         break;
@@ -42,66 +91,56 @@ function App() {
     }
   }
 
+  function handleLoginSubmit(userData) {
+    dispatch(authorization(userData));
+  }
+
+  function closePopup() {
+    setIsConfirmationModalVisible(false);
+  }
+
+  const modal = <Modal closePopup={closePopup}></Modal>;
+
   return (
     <div className={isScrollAllowed ? `page` : `page page_type_no-scroll`}>
-      <Switch>
-        <Route exact path="/">
-          <div className="page__top-wrapper">
-            <Header
-              handlePageScroll={handlePageScroll}
-              isAboutSectionVisible={isAboutSectionVisible}
-              isDoctorsSectionVisible={isDoctorsSectionVisible}
-              isContactsSectionVisible={isContactsSectionVisible}
-              isDirectionSectionVisible={isDirectionSectionVisible}
-            />
-            <Lead />
-          </div>
-          <Main handleMenuEl={handleMenuEl}></Main>
-        </Route>
+      <Header
+        handlePageScroll={handlePageScroll}
+        isAboutSectionVisible={isAboutSectionVisible}
+        isDoctorsSectionVisible={isDoctorsSectionVisible}
+        isContactsSectionVisible={isContactsSectionVisible}
+        isDirectionSectionVisible={isDirectionSectionVisible}
+      />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <div className="page__top-wrapper">
+                <Lead />
+              </div>
 
-        <Route exact path="/узи">
-          <DirectionPage handlePageScroll={handlePageScroll} title='Узи' description={['Ультразвуковое исследование (УЗИ), сонография — неинвазивное исследование организма человека или животного с помощью ультразвуковых волн.']}/>
+              <Main handleMenuEl={handleMenuEl} />
+            </>
+          }
+        />
+        <Route path="/directions/:path" element={<DirectionPage />} />
+        <Route path="/doctors/:path" element={<DoctorPage />} />
+        <Route path="/prices" element={<PricesPage />} />
+        <Route
+          path="/admin/login"
+          element={<LoginPage handleLoginSubmit={handleLoginSubmit} />}
+        />
+        <Route path="/admin/editor" element={<EditorPage />}>
+          <Route path="doctors" element={<EditorDoctorsDetails />} />
+          <Route path="directions" element={<EditorDoctorsDetails />} />
+          <Route path="prices" element={<EditorDoctorsDetails />} />
+          <Route path="users" element={<EditorDoctorsDetails />} />
         </Route>
+      </Routes>
 
-        <Route exact path="/генетическое-тестирование">
-          <DirectionPage handlePageScroll={handlePageScroll} title='Генетическое тестирование' description={['Неинвазивное пренатальное пренатальное тестирование — методика анализа внеклеточной ДНК плода, циркулирующей в крови беременной женщины, для скрининга с целью выявления трисомии по 21-й хромосоме (синдром Дауна) и некоторых других анеуплодий. Может выполняться начиная с 10-й недели беременности (обычно производится между 10-й и 22-й неделями, а результаты получают спустя неделю или более).']}/>
-        </Route>
-
-        <Route exact path="/косметология">
-          <DirectionPage handlePageScroll={handlePageScroll} title='Косметология' description={['Косметология — наука, изучающая эстетические проблемы организма человека, их этиологии, проявления и методы коррекции, также — свод методик, направленных на коррекцию эстетических проблем внешности человека.']}/>
-        </Route>
-
-        <Route exact path="/гемабанк">
-          <DirectionPage handlePageScroll={handlePageScroll} title='Гемабанк' description={['Гемабанк®️ — персональный банк хранения клеток пуповинной крови, клеток и ткани пупочного канатика.', 'Гемабанк®️ — крупнейший в РФ и СНГ лицензированный банк персонального хранения клеток пуповинной крови, клеток и ткани пупочного канатика, лидер российского рынка, соответствует требованиям международных стандартов GMP.']}/>
-        </Route>
-
-        <Route exact path="/gurzhiy-andrey-alexandrovich">
-          <DoctorPage
-            handlePageScroll={handlePageScroll}
-            name="Гуржий Андрей Александрович"
-            infoObj={{direction: "Врач акушер-гинеколог", time: "Время приема: Понедельник, Среда , Пятница с 16-30 до 19-00", education:"Высшее образование, Высшая квалификационная категория", university: "Амурская Государственная Медицинская академия 1990-1996г"}}/>
-        </Route>
-
-        <Route exact path="/gorbunov-vyacheslav-alexandrovich">
-          <DoctorPage
-            handlePageScroll={handlePageScroll}
-            name="Горбунов Вячеслав Александрович"
-            infoObj={{direction: "Врач ультразвуковой диагностики", time: "Понедельник, Среда , Пятница с 16-30 до 19-00", education:"Высшее образование", university: "Амурская Государственная Медицинская академия 1990-1996г"}}/>
-        </Route>
-
-        <Route exact path="/gulevich-evgeniya-alexandrovna">
-          <DoctorPage
-            handlePageScroll={handlePageScroll}
-            name="Гулевич Евгения Александровна"
-            infoObj={{direction: "Врач акушер-гинеколог", time: "Вторник, Четверг с 16-30 до 19-00", education:"Высшее образование. Вторая квалификационная категория", university: "Амурская Государственная Медицинская академия 2006-2012г"}}/>
-        </Route>
-
-        <Route exact path="/prices">
-          <PricesPage handlePageScroll={handlePageScroll}/>
-        </Route>
-
-      </Switch>
       <Footer />
+
+      {isConfirmationModalVisible && modal}
     </div>
   );
 }

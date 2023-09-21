@@ -1,12 +1,14 @@
 import DoctorCard from "./DoctorCard";
 import React from "react";
 import { useInView } from "react-intersection-observer";
+import { useSelector } from "react-redux";
 
 function Doctors({ handleMenuEl }) {
   const { ref, inView } = useInView({ threshold: 1 });
+  const doctors = useSelector((store) => store.doctors.doctors);
 
   React.useEffect(() => {
-    handleMenuEl('doctors', inView);
+    handleMenuEl("doctors", inView);
   }, [inView, handleMenuEl]);
 
   return (
@@ -14,9 +16,9 @@ function Doctors({ handleMenuEl }) {
       <h3 className="doctors__title">Врачи</h3>
       <hr className="hr" />
       <ul className="doctors__cards">
-        <DoctorCard info="Врач акушер-гинеколог" name="Гуржий Андрей Александрович" link="./gurzhiy-andrey-alexandrovich"/>
-        <DoctorCard info="Врач ультразвуковой диагностики" name="Горбунов Вячеслав Александрович" link="./gorbunov-vyacheslav-alexandrovich"/>
-        <DoctorCard info="Врач акушер-гинеколог" name="Гулевич Евгения Александровна" link="./gulevich-evgeniya-alexandrovna"/>
+        {doctors.map((doctor) => {
+          return <DoctorCard doctor={doctor} />;
+        })}
       </ul>
     </section>
   );

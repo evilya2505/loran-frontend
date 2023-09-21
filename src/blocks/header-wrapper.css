@@ -1,11 +1,12 @@
 .header-wrapper {
+  margin: 0;
   padding: 13px 0 10px;
   z-index: 4;
-  transition: all .2s, opacity .2s linear;
+  transition: all 0.2s, opacity 0.2s linear;
 }
 
 .header-wrapper_type_main {
-  background: linear-gradient(279.51deg, #FFF3EA 30.35%, #F3F3F3 100%);
+  background: linear-gradient(279.51deg, #fff3ea 30.35%, #f3f3f3 100%);
 }
 
 .header-wrapper_type_other {
